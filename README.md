@@ -1,5 +1,22 @@
 # README
 
+## Userの登録
+
+DBマイグレーションを実行後、Railsコンソールを起動します。
+
+```sh
+bin/rails db:migrate
+bin/rails console
+```
+
+コンソール上でユーザーを登録します。
+
+```ruby
+User.create!(uid: "kindai", pass: "sanriko")
+```
+
+登録したIDとパスワードが一致するとログインできます。ログイン後は「ログアウト」リンクからログアウトできます。
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

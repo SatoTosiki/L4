@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "application/L4"
   get "top/main"
   post "top/login"
+  get "top/logout"
   root "top#main"
 
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
