@@ -12,7 +12,13 @@ bin/rails console
 コンソール上でユーザーを登録します。
 
 ```ruby
-User.create!(uid: "kindai", pass: "sanriko")
+User.create!(uid: "kindai", pass: BCrypt::Password.create("sanriko").to_s)
+```
+
+`pass`には平文ではなくBCryptのハッシュが保存されます。基礎課題２で登録した平文パスワードのユーザーが残っている場合は、ログインに使う前にコンソールで削除してください。
+
+```ruby
+User.destroy_all
 ```
 
 登録したIDとパスワードが一致するとログインできます。ログイン後は「ログアウト」リンクからログアウトできます。
